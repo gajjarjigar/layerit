@@ -119,7 +119,7 @@ def lambda_handler(event, context):
             architecture = 'arm64' if platform.machine() == 'aarch64' else 'x86_64'
             response = lambda_client.publish_layer_version(
                 LayerName=layer_name,
-                Description=f'Layer contains f{", ".join(packages)}',
+                Description=f'Layer contains {", ".join(packages)}',
                 Content={
                     'S3Bucket': s3_bucket_name,
                     'S3Key': s3_key
