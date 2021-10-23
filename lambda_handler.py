@@ -124,8 +124,8 @@ def lambda_handler(event, context):
                     'S3Bucket': s3_bucket_name,
                     'S3Key': s3_key
                 },
-                # CompatibleRuntimes=[os.environ.get('AWS_EXECUTION_ENV').strip('AWS_Lambda_')],
-                CompatibleArchitectures=[architecture]
+                CompatibleRuntimes=[os.environ.get('AWS_EXECUTION_ENV').strip('AWS_Lambda_')],
+                # CompatibleArchitectures=[architecture]
             )
             print(response)
 
