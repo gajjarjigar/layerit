@@ -108,7 +108,7 @@ Resources:
                         return zip_buffer
 
 
-                    def handler(event, context):
+                    def lambda_handler(event, context):
                         s3_bucket_name = event['s3Bucket']
                         publish_layer = event['publishLayer']
                         packages = event['packages']
