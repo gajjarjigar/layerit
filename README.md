@@ -1,6 +1,21 @@
 # layerit
 Lambda code to create lambda layer
 
+What does the code do?
+
+- Creates a python virtual environment in /tmp folder of lambda.
+- Installs packages using os command "pip install".
+- Creates a zip of the installed packages.
+- Uploads to S3 bucket.
+- Publish a layer in the same region and account where lambda is present.
+
+
+Note:
+
+- You can mention the specific version of packages. (e.g. numpy==1.20.1)
+- Creating layer with zip size greater than 50 MB will result in error while publishing zip file due to lambda limits. https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html
+- This code won't work if a PIP package requires pre-installation of certain binaries.
+
 Sample Inputs:
 
 Input #1
